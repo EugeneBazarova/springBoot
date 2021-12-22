@@ -1,15 +1,36 @@
 table {
-    font-family: arial;
-    border-collapse: collapse;
-    width: 100%;
+    border: 1px solid #02ab55;
+border-collapse: collapse;
+    width: 90%;
+    font-family: Arial;
+    margin: 30px;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid powderblue;
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: lightskyblue;
+}
+
+form {
+    margin: 30px;
+}
+
+label {
+    font-family: Arial;
+    font-weight: bold ;
+    margin-right: 10px;
+}
+
+.btn{
+    font-family: Arial;
+    font-weight: bold;
+    color: azure;
+    background-color: cornflowerblue;
+    border-color: transparent;
+    border-radius: 10px;
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>[ SEARCH RESULT ]</title>
-    <link ,href="/css/result_style.css" rel="stylesheet">
+    <link href="/css/result_style.css" rel="stylesheet">
 </head>
 <body>
 <table>
@@ -21,10 +21,9 @@
         </tr>
     </th:block>
 </table>
-<form action="/product-search" method="post" th:object="${product}">
+<form action="/products" method="post" th:object="${product}">
     <input name="ID" type="text">
-    <input name="price" type="text">
-    <input type="submit" value="search">
+    <input class="btn" type="submit" value="search">
 </form>
 </body>
 </html>

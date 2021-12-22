@@ -36,13 +36,13 @@ public class ProductController {
     public String orders(Model model) {
         model.addAttribute("products", manageOrders(null));
         model.addAttribute("product", new Product());
-        return "product";
+        return "products";
     }
 
     @PostMapping("/product-search")
     public String createOrder(@ModelAttribute Product product) {
         System.out.println("search result : " + product);
         manageOrders(product);
-        return "redirect:/product";
+        return "redirect:/products";
     }
 }
