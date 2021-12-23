@@ -42,6 +42,6 @@ public class ProductController {
     public String createOrder(@ModelAttribute Product product) {
         System.out.println("search result : " + product);
         manageOrders(product);
-        return "redirect:/product";
+        return "redirect:/products";
     }
 }
