@@ -58,7 +58,7 @@ public class Product {
         return Objects.hash(id, title, price);
     }
 
-    @Override
+  @Override
     public String toString() {
         return "Product{" +
                 "ID='" + id + '\'' +

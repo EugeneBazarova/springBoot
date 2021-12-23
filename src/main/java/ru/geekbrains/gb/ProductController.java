@@ -2,9 +2,8 @@ package ru.geekbrains.gb;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,17 +31,17 @@ public class ProductController {
         return productList;
     }
 
-    @GetMapping("/products")
+    @RequestMapping (value = "/products")
     public String orders(Model model) {
         model.addAttribute("products", manageOrders(null));
         model.addAttribute("product", new Product());
         return "products";
     }
 
-    @PostMapping("/product-search")
+    @RequestMapping (value = "/product-search")
     public String createOrder(@ModelAttribute Product product) {
         System.out.println("search result : " + product);
         manageOrders(product);
-        return "redirect:/products";
+        return "redirect:/product";
     }
 }
