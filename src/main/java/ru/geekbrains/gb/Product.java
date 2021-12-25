@@ -7,15 +7,15 @@ public class Product {
 
     private Integer id;
     private String title;
-    private Integer price;
+    private Integer cost;
 
     public Product() {
     }
 
-    public Product(Integer id, String title, Integer price) {
+    public Product(Integer id, String title, Integer cost) {
         this.id = id;
         this.title = title;
-        this.price = price;
+        this.cost = cost;
     }
 
     public Integer getId() {
@@ -35,12 +35,12 @@ public class Product {
         this.title = title;
     }
 
-    public Integer getPrice() {
-        return price;
+    public Integer getCost() {
+        return cost;
     }
 
-    public void setPrice(Integer price) {
-        this.price = price;
+    public void setCost(Integer cost) {
+        this.cost = cost;
     }
 
     @Override
@@ -50,12 +50,12 @@ public class Product {
         Product product = (Product) o;
         return Objects.equals(id, product.id) &&
                 Objects.equals(title, product.title) &&
-                Objects.equals(price, product.price);
+                Objects.equals(cost, product.cost);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, price);
+        return Objects.hash(id, title, cost);
     }
 
   @Override
@@ -63,7 +63,7 @@ public class Product {
         return "Product{" +
                 "ID='" + id + '\'' +
                 "title='" + title + '\'' +
-                ", price=" + price +
+                ", price=" + cost +
                 '}';
     }
 }
