@@ -2,9 +2,9 @@ package ru.geekbrains.gb.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.geekbrains.gb.models.Product;
+import ru.geekbrains.gb.models.User;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }

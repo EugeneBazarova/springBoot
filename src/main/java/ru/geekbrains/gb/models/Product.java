@@ -4,20 +4,27 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "products_items")
-public class ProductModel {
 
+public class Product {
     @Id
-    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "cost")
     private Integer cost;
 
-    public ProductModel() {
+    public Product(String title, Integer cost) {
+        this.title = title;
+        this.cost = cost;
+    }
+
+    public Product(Long id, String title, Integer cost) {
+        this.id = id;
+        this.title = title;
+        this.cost = cost;
+    }
+
+    public Product() {
 
     }
 

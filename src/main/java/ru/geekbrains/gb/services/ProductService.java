@@ -2,7 +2,7 @@ package ru.geekbrains.gb.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.geekbrains.gb.models.ProductModel;
+import ru.geekbrains.gb.models.Product;
 import ru.geekbrains.gb.repositories.ProductRepository;
 
 import java.util.List;
@@ -16,16 +16,15 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<ProductModel> findAll() {
+    public List<Product> findAll() {
         return productRepository.findAll();
     }
 
-    public ProductModel save(ProductModel productModel) {
-        return productRepository.save(productModel);
+    public Product save(Product product) {
+        return productRepository.save(product);
     }
 
-    public ProductModel findById(Long id) {
-        return productRepository.getOne(id);
+    public Product findProduct(Long id) {
+        return productRepository.findById(id).orElse(null);
     }
-
 }
