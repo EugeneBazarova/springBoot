@@ -7,11 +7,19 @@ import javax.persistence.*;
 public class ProductModel {
 
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "cost")
     private Integer cost;
+
+    public ProductModel() {
+
+    }
 
     public Long getId() {
         return id;
