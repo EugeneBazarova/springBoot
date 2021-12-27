@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<title>[UPDATE PRODUCT]</title>
+</head>
+<body>
+
+<form th:action="@{/product-update}" th:object="${product}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <br>
+    <label for="title">Title</label>
+    <input type="text" th:field="*{title}" id="title" placeholder="title">
+    <br>
+    <label for="cost">Cost</label>
+    <input type="text" th:field="*{cost}" id="cost" placeholder="cost">
+    <br>
+    <input type="submit" value="Update product">
+</form>
+
+</body>
+</html>
