@@ -1,6 +1,9 @@
 package ru.geekbrains.gb.models;
 
+import org.hibernate.Hibernate;
+
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "products_items")
@@ -26,6 +29,14 @@ public class Product {
 
     public Product() {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Product product = (Product) o;
+        return id != null && Objects.equals(id, product.id);
     }
 
     public Long getId() {

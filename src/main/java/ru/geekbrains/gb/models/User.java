@@ -1,9 +1,11 @@
 package ru.geekbrains.gb.models;
 
+
 import javax.persistence.*;
 
-@Entity
 @Table(name = "users")
+@Entity
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

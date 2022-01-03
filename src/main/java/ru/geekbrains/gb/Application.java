@@ -10,3 +10,12 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 }
+
+//TODO
+//1. Добавить сущность товар
+//2. Добавить сущность категории
+//3. Вывести список из 5 товаров с категориями на странице.
+
+
+//Урок 8. Thymeleaf
+//1. Реализуйте REST контроллер для работы с сущностью Product;

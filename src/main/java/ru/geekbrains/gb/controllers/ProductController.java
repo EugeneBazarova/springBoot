@@ -20,7 +20,7 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public String index(Model model) {
         model.addAttribute("title", "Mainpage");
         return "index";
@@ -33,10 +33,19 @@ public class ProductController {
         return "product-list";
     }
 
+    @RequestMapping(value = "/search/{id}", method = RequestMethod.GET)
+    public String findProduct(@PathVariable("id") long id, Model model) {
+        model.addAttribute("product", productService.findProduct(id));
+        return "search-result";
+    }
+
+
     @GetMapping("/product-list/product-create")
     public String newProduct(Product product) {
         return "product-create";
     }
+
+
 
     @PostMapping("/product-list/product-create")
     public String newProductAdd(@RequestParam String title, @RequestParam Integer cost, Model model) {
@@ -45,12 +54,9 @@ public class ProductController {
         return "redirect:/product-list";
     }
 
-    //    не могу понять, в чем ошибка:
-//    при вводе ID в полне поиска url на выходе http://localhost:8080/search/?
-//    если дописываю в строке любой ID вручную - показывает таблицу с найденной позицией
-    @GetMapping("search/{id}")
-    public String findProductPage(@PathVariable long id, Model model) {
-        model.addAttribute("product", productService.findProduct(id));
-        return "search-result";
+    @RequestMapping("/product-delete/{id}")
+    public String deleteProduct(@PathVariable("id") long id) {
+        productService.deleteById(id);
+        return "redirect:/product-list";
     }
 }

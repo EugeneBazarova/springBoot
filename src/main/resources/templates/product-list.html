@@ -20,7 +20,7 @@
                     <a class="nav-link active" aria-current="page" href="/product-list">Product list</a>
                 </li>
             </ul>
-            <form th:action="@{/search/}" method="get" class="d-flex">
+            <form action="#" th:action="@{/search/}" th:object="${id}"  method="get" class="d-flex">
                 <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
@@ -31,13 +31,14 @@
 <div th:switch="${products}">
     <h2 th:case="null">No products found!</h2>
     <div th:case="*">
-        <h2>Products</h2>
-        <table class="table table-striped">
+        <h2 style="width: 90%; margin: auto;" >Products</h2>
+        <table class="table table-striped" style="width: 90%; margin: auto;">
             <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Cost</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
@@ -50,12 +51,12 @@
 <!--                <td><a th:href="@{product-update/{id}(id=${product.id})}">Edit</a></td>-->
                 <td></td>
                 <td></td>
-<!--                <td><a th:href="@{product-delete/{id}(id=${product.id})}">Delete</a></td>-->
+                <td><a th:href="@{product-delete/{id}(id=${product.id})}"><button class="btn btn-danger">Delete</button></a></td>
             </tr>
             </tbody>
         </table>
     </div>
-    <p><a href="/product-list/product-create">Create product</a></p>
+    <p><a href="/product-list/product-create" class="btn btn-success" style="margin-left: 5%;">Create product</a></p>
 </div>
 
 
