@@ -6,6 +6,7 @@ import ru.geekbrains.gb.models.Product;
 import ru.geekbrains.gb.repositories.ProductRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -26,5 +27,13 @@ public class ProductService {
 
     public Product findProduct(Long id) {
         return productRepository.findById(id).orElse(null);
+    }
+
+//    public Optional<Product> findProduct(Long id){
+//        return productRepository.findById(id);
+//    }
+
+    public void deleteById(Long id) {
+      productRepository.deleteById(id);
     }
 }
